@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DB0FB8F-0EAA-490A-AA7D-28AE010186A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WoWFormatLib</RootNamespace>
+    <AssemblyName>WoWFormatLib</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBFilesClient.NET">
+      <HintPath>.\DBFilesClient.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBC\DB2Reader.cs" />
+    <Compile Include="DBC\DBCHelper.cs" />
+    <Compile Include="DBC\DBCReader.cs" />
+    <Compile Include="DBC\Structs.cs" />
+    <Compile Include="FileReaders\ADTReader.cs" />
+    <Compile Include="FileReaders\BLPReader.cs" />
+    <Compile Include="FileReaders\M2Reader.cs" />
+    <Compile Include="FileReaders\SKINReader.cs" />
+    <Compile Include="FileReaders\TEXReader.cs" />
+    <Compile Include="FileReaders\WDLReader.cs" />
+    <Compile Include="FileReaders\WDTReader.cs" />
+    <Compile Include="FileReaders\WMOReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SereniaBLPLib\BlpFile.cs" />
+    <Compile Include="SereniaBLPLib\DXTDecompression.cs" />
+    <Compile Include="Structs\ADT.struct.cs" />
+    <Compile Include="Structs\ADTobj.struct.cs" />
+    <Compile Include="Structs\ADTtex.struct.cs" />
+    <Compile Include="Structs\M2.struct.cs" />
+    <Compile Include="Structs\SKIN.struct.cs" />
+    <Compile Include="Structs\WDL.struct.cs" />
+    <Compile Include="Structs\WDT.struct.cs" />
+    <Compile Include="Structs\WMO.struct.cs" />
+    <Compile Include="Utils\ABlock.cs" />
+    <Compile Include="Utils\BlizzHeader.cs" />
+    <Compile Include="Utils\CASC.cs" />
+    <Compile Include="Utils\RGBColor.cs" />
+    <Compile Include="Utils\MissingFile.cs" />
+    <Compile Include="Utils\Quaternion.cs" />
+    <Compile Include="Utils\Vector3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CASCExplorer\CASCExplorer.csproj">
+      <Project>{cb208f91-b1e8-4319-b4c0-2f4e15a4bfbc}</Project>
+      <Name>CASCExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CascLib\CascLib.csproj">
+      <Project>{e08e1e48-6585-4137-8405-661c62c10713}</Project>
+      <Name>CascLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
