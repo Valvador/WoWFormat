@@ -67,16 +67,16 @@
     <Compile Include="LoadWMO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WoWFormatLib\WoWFormatLib.csproj">
-      <Project>{5db0fb8f-0eaa-490a-aa7d-28ae010186a9}</Project>
-      <Name>WoWFormatLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WoWFormatLib\WoWFormatLib.csproj">
+      <Project>{5db0fb8f-0eaa-490a-aa7d-28ae010186a9}</Project>
+      <Name>WoWFormatLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SharpDX.2.6.2\build\SharpDX.targets" Condition="Exists('..\packages\SharpDX.2.6.2\build\SharpDX.targets')" />

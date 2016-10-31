@@ -127,15 +127,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CHANGELOG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CASCExplorer\CASCExplorer.csproj">
+      <Project>{cb208f91-b1e8-4319-b4c0-2f4e15a4bfbc}</Project>
+      <Name>CASCExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CascLib\CascLib.csproj">
+      <Project>{e08e1e48-6585-4137-8405-661c62c10713}</Project>
+      <Name>CascLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WoWFormatLib\WoWFormatLib.csproj">
       <Project>{5db0fb8f-0eaa-490a-aa7d-28ae010186a9}</Project>
       <Name>WoWFormatLib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="CHANGELOG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\WoWRenderLib\WoWRenderLib.csproj">
+      <Project>{57271a6c-a992-4f83-a6c5-8eeea32c7960}</Project>
+      <Name>WoWRenderLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
